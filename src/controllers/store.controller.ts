@@ -29,4 +29,22 @@ storeController.getLogin = (req: Request, res: Response) => {
     }
 }
 
+storeController.processSignup = (req: Request, res: Response) => {
+    try {
+        console.log("processSignup");        
+        res.send("DONE");
+    } catch (err) {
+        console.log("Error, getSignup:", err);
+    }
+}
+
+storeController.processLogin = (req: Request, res: Response) => {
+    try {
+        console.log("processLogin");        
+        res.send("DONE");
+    } catch (err) {
+        console.log("Error, getLogin:", err);
+    }
+}
+
 export default storeController;
