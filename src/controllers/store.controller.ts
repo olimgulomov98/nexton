@@ -61,6 +61,7 @@ storeController.processLogin = async (req: Request, res: Response) => {
         res.send(result);
     } catch (err) {
         console.log("Error, getLogin:", err);
+        res.send(err);
     }
 }
 
