@@ -13,5 +13,6 @@ routerAdmin
     .get("/login", storeController.getLogin)
     .post("/login", storeController.processLogin)
 
+routerAdmin.get("/logout", storeController.logout)
 routerAdmin.get("/check-me", storeController.checkAuthSession)
 export default routerAdmin;
