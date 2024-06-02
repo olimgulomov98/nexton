@@ -38,18 +38,17 @@ const productSchema = new Schema(
     productSize: {
       type: String,
       enum: ProductSize,
-      default: ProductSize.S,
+      default: ProductSize.SMALL,
     },
 
     productShoeSize: {
-      type: String,
+      type: Number,
       enum: ProductShoeSize,
       default: ProductShoeSize.FORTY,
     },
 
     productDesc: {
       type: String,
-      required: true,
     },
 
     productImages: {

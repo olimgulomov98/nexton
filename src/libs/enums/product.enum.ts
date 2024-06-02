@@ -1,9 +1,9 @@
 export enum ProductSize {
-  S = "SMALL",
-  M = "MEDIUM",
-  L = "LARGE",
-  XL = "X LARGE",
-  TWO_XL = "2 X LARGER"
+  SMALL = "S",
+  MEDIUM = "M",
+  LARGE = "L",
+  X_LARGE = "XL",
+  TWO_XL = "2XL"
 }
 
 export enum ProductShoeSize {

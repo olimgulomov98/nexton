@@ -20,7 +20,7 @@ routerAdmin.get("/check-me", storeController.checkAuthSession)
 
 /** Product **/
 
-routerAdmin.get("/product/all", storeController.verifyStore, productController.getAllProduct)
+routerAdmin.get("/product/all", storeController.verifyStore, productController.getAllProducts)
 
 routerAdmin.post("/product/create", storeController.verifyStore, makeUploader("products").array("productImages", 5), productController.createNewProduct)
 
