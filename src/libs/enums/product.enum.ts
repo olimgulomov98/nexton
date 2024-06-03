@@ -26,6 +26,5 @@ export enum ProductCollection {
   MEN = "MEN",
   WOMEN = "WOMEN",
   KIDS = "KIDS",
-  ACCESSORIES = "ACCESSORIES",
-  COSMETICS = "COSMETICS",
+  SHOES = "SHOES",
 }
