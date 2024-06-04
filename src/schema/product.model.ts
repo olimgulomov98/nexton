@@ -44,7 +44,7 @@ const productSchema = new Schema(
     productShoeSize: {
       type: Number,
       enum: ProductShoeSize,
-      default: ProductShoeSize.FORTY,
+      default: ProductShoeSize.THIRTY_EIGHT,
     },
 
     productDesc: {
