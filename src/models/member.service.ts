@@ -1,3 +1,4 @@
+import MemberModel from "../schema/Member.model";
 import {
   LoginInput,
   Member,
@@ -6,7 +7,6 @@ import {
 } from "../libs/types/member";
 import Errors, { HttpCode, Message } from "../libs/Error";
 import { MemberStatus, MemberType } from "../libs/enums/member.enum";
-import MemberModel from "../schema/member.model";
 import bcrypt from "bcryptjs";
 import { shapeIntoMongooseObjectId } from "../libs/config";
 
