@@ -1,36 +1,34 @@
 console.log("Home frontend javascript file");
 
-
 function fitElementToParent(el, padding) {
-  let timeout = null;
-
+  var timeout = null;
   function resize() {
     if (timeout) clearTimeout(timeout);
     anime.set(el, { scale: 1 });
-    let pad = padding || 0;
-    let parentEl = el.parentNode;
-    let elOffsetWidth = el.offsetWidth - pad;
-    let parentOffsetWidth = parentEl.offsetWidth;
-    let ratio = parentOffsetWidth / elOffsetWidth;
+    var pad = padding || 0;
+    var parentEl = el.parentNode;
+    var elOffsetWidth = el.offsetWidth - pad;
+    var parentOffsetWidth = parentEl.offsetWidth;
+    var ratio = parentOffsetWidth / elOffsetWidth;
     timeout = setTimeout(anime.set(el, { scale: ratio }), 10);
   }
-
   resize();
   window.addEventListener("resize", resize);
 }
 
-(function () {
-  const sphereEl = document.querySelector(".sphere-animation");
-  const spherePathEls = sphereEl.querySelectorAll(".sphere path");
-  const pathLength = spherePathEls.length;
-  const animations = [];
+var sphereAnimation = (function () {
+  var sphereEl = document.querySelector(".sphere-animation");
+  var spherePathEls = sphereEl.querySelectorAll(".sphere path");
+  var pathLength = spherePathEls.length;
+  var hasStarted = false;
+  var aimations = [];
 
   fitElementToParent(sphereEl);
 
-  const breathAnimation = anime({
+  var breathAnimation = anime({
     begin: function () {
-      for (let i = 0; i < pathLength; i++) {
-        animations.push(
+      for (var i = 0; i < pathLength; i++) {
+        aimations.push(
           anime({
             targets: spherePathEls[i],
             stroke: {
@@ -46,8 +44,8 @@ function fitElementToParent(el, padding) {
       }
     },
     update: function (ins) {
-      animations.forEach(function (animation, i) {
-        let percent = (1 - Math.sin(i * 0.35 + 0.0022 * ins.currentTime)) / 2;
+      aimations.forEach(function (animation, i) {
+        var percent = (1 - Math.sin(i * 0.35 + 0.0022 * ins.currentTime)) / 2;
         animation.seek(animation.duration * percent);
       });
     },
@@ -55,7 +53,7 @@ function fitElementToParent(el, padding) {
     autoplay: false,
   });
 
-  const introAnimation = anime
+  var introAnimation = anime
     .timeline({
       autoplay: false,
     })
@@ -75,7 +73,7 @@ function fitElementToParent(el, padding) {
       0
     );
 
-  const shadowAnimation = anime(
+  var shadowAnimation = anime(
     {
       targets: "#sphereGradient",
       x1: "25%",

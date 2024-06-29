@@ -37,7 +37,8 @@
                 <th scope="col">Product Name</th>
                 <th scope="col">Product Type</th>
                 <th scope="col">Product Size</th>
-                <th scope="col">Product Price</th>
+                <th scope="col">Product Original Price</th>
+                <th scope="col">Product Discount Price</th>
                 <th scope="col">Product Left Count</th>
                 <th scope="col">Status</th>
               </tr>
@@ -49,9 +50,10 @@
                 <td><%= value.productCollection %></td>
                 <td>
                   <%= value.productCollection === "SHOES" ? value.productShoeSize :
-                  value.productSize %>
+                  value.productSize && value.productCollection === "KIDS" ? value.productKidsSize : value.productSize %>
                 </td>
-                <td><%= value.productPrice %></td>
+                <td><%= value.productOrgPrice %></td>
+                <td><%= value.productDisPrice %></td>
                 <td><%= value.productLeftCount %></td>
                 <td>
                   <select
@@ -103,16 +105,25 @@
             />
           </div>
           <div class="half-input-frame">
-            <div class="half-input">
-              <label>Product Price</label>
+            <div class="half-input price">
+              <label>Product Original Price</label>
               <input
                 type="number"
-                placeholder="Price"
-                name="productPrice"
-                class="product-price"
+                placeholder="Original price"
+                name="productOrgPrice"
+                class="product-org-price"
               />
             </div>
-            <div class="half-input">
+            <div class="half-input price">
+              <label>Product Discount Price</label>
+              <input
+                type="number"
+                placeholder="Discount price"
+                name="productDisPrice"
+                class="product-dis-price"
+              />
+            </div>
+            <div class="half-input price">
               <label>Product Left Counts</label>
               <input
                 type="number"
@@ -154,6 +165,19 @@
                 <option value="42">42</option>
                 <option value="43">43</option>
                 <option value="44">44</option>
+              </select>
+            </div>
+
+            <div class="half-input" id="product-kidsSize" style="display: none">
+              <label>Kids Size</label>
+              <select class="product-kidsSize" name="productKidsSize">
+                <option value="1-2 years" selected>1-2 years</option>
+                <option value="3-4 years">3-4 years</option>
+                <option value="5-6 years">5-6 years</option>
+                <option value="7-8 years">7-8 years</option>
+                <option value="9-10 years">9-10 years</option>
+                <option value="11-12 years">11-12 years</option>
+                <option value="13-15 years">13-15 years</option>
               </select>
             </div>
           </div>

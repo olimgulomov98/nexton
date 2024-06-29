@@ -5,9 +5,15 @@ $(function () {
     const selectedValue = $(".product-collection").val();
     if (selectedValue === "SHOES") {
       $("#product-size").hide();
+      $("#product-kidsSize").hide();
       $("#product-shoeSize").show();
+    } else if (selectedValue === "KIDS") {
+      $("#product-size").hide();
+      $("#product-shoeSize").hide();
+      $("#product-kidsSize").show();
     } else {
       $("#product-shoeSize").hide();
+      $("#product-kidsSize").hide();
       $("#product-size").show();
     }
   });
@@ -44,7 +50,8 @@ $(function () {
 
 function validateForm() {
   const productName = $(".product-name").val(),
-    productPrice = $(".product-price").val(),
+    productOrgPrice = $(".product-org-pricee").val(),
+    productDisPrice = $(".product-dis-price").val(),
     productLeftCount = $(".product-left-count").val(),
     productCollection = $(".product-collection").val(),
     productDesc = $(".product-desc").val(),
@@ -52,7 +59,8 @@ function validateForm() {
 
   if (
     productName === "" ||
-    productPrice === "" ||
+    productOrgPrice === "" ||
+    productDisPrice === "" ||
     productLeftCount === "" ||
     productCollection === "" ||
     productDesc === "" ||

@@ -3,6 +3,8 @@ import {
   ProductCollection,
   ProductSize,
   ProductStatus,
+  ProductShoeSize,
+  ProductKidsSize,
 } from "../enums/product.enum";
 
 export interface Product {
@@ -10,10 +12,12 @@ export interface Product {
   productStatus: ProductStatus;
   productCollection: ProductCollection;
   productName: string;
-  productPrice: number;
+  productOrgPrice: number;
+  productDisPrice: number;
   productLeftCount: number;
   productSize: ProductSize;
-  productShoeSize: number;
+  productShoeSize: ProductShoeSize;
+  productKidsSize: ProductKidsSize;
   productDesc?: string;
   productImages: string[];
   productViews: number;
@@ -31,10 +35,12 @@ export interface ProductInput {
   productStatus?: ProductStatus;
   productCollection: ProductCollection;
   productName: string;
-  productPrice: number;
+  productOrgPrice: number;
+  productDisPrice: number;
   productLeftCount: number;
   productSize?: ProductSize;
-  productShoeSize?: number;
+  productShoeSize?: ProductShoeSize;
+  productKidsSize?: ProductKidsSize;
   productDesc?: string;
   productImages?: string[];
   productViews?: number;
@@ -45,10 +51,12 @@ export interface ProductUpdateInput {
   productStatus?: ProductStatus;
   productCollection?: ProductCollection;
   productName?: string;
-  productPrice?: number;
+  productOrgPrice?: number;
+  productDisPrice?: number;
   productLeftCount?: number;
   productSize?: ProductSize;
-  productShoeSize?: number;
+  productShoeSize?: ProductShoeSize;
+  productKidsSize?: ProductKidsSize;
   productDesc?: string;
   productImages?: string[];
   productViews?: number;

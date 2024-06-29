@@ -196,6 +196,10 @@
   flex-direction: column;
 }
 
+.products-container .half-input-frame .price {
+  width: 32%;
+}
+
 .products-container .half-input label {
   font-family: "Source Serif Pro";
   font-style: normal;

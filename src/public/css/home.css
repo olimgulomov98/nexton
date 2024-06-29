@@ -1,7 +1,7 @@
 .home-container {
   position: relative;
   width: auto;
-  height: auto;
+  height: 100vh;
   min-height: 100%;
   display: flex;
   flex-direction: column;
@@ -14,22 +14,6 @@
   color: #000000;
 }
 
-.home-container .nav-item a {
-  color: #e3c08d;
-}
-
-.home-container .nav-item a.disabled {
-  color: #898071;
-}
-
-.home-container .navigation-menu {
-  position: relative;
-  z-index: 10000;
-  color: #efefee;
-  font-size: 40px;
-  font-family: monospace;
-}
-
 .home-container .animation-frame {
   position: relative;
   display: flex;
@@ -38,22 +22,21 @@
   margin-top: 55px;
 }
 
-.home-container .animation-wrapper {
-  position: relative;
-  width: 775px;
-  height: 775px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.animation-wrapper {
+  width: 50%;
+  padding-bottom: 50%;
 }
 
-.home-container .sphere-animation {
-  position: relative;
+.sphere-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 580px;
   height: 580px;
+  margin: -290px 0 0 -290px;
 }
 
-.home-container .sphere path {
+.sphere path {
   fill: url(#sphereGradient);
   stroke-width: 1px;
   stroke: rgba(80, 80, 80, 0.35);

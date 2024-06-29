@@ -1,6 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 import {
   ProductCollection,
+  ProductKidsSize,
   ProductShoeSize,
   ProductSize,
   ProductStatus,
@@ -25,7 +26,12 @@ const productSchema = new Schema(
       required: true,
     },
 
-    productPrice: {
+    productOrgPrice: {
+      type: Number,
+      required: true,
+    },
+
+    productDisPrice: {
       type: Number,
       required: true,
     },
@@ -47,6 +53,12 @@ const productSchema = new Schema(
       default: ProductShoeSize.THIRTY_EIGHT,
     },
 
+    productKidsSize: {
+      type: String,
+      enum: ProductKidsSize,
+      default: ProductKidsSize.ONE_TWO,
+    },
+
     productDesc: {
       type: String,
     },
@@ -65,7 +77,7 @@ const productSchema = new Schema(
 );
 
 productSchema.index(
-  { productName: 1, productSize: 1, productShoeSize: 1 },
+  { productName: 1, productSize: 1, productShoeSize: 1, productKidsSize: 1 },
   { unique: true }
 );
 export default mongoose.model("Product", productSchema);
