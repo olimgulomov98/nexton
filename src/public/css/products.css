@@ -1,12 +1,16 @@
 .products-container {
   position: relative;
   width: auto;
-  height: auto;
+  height: 100%;
   min-height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(-45deg, #110303bf, #e37813, #011c1aba, #968383);
+  background: linear-gradient(
+    109.6deg,
+    rgb(0, 0, 0) 11.2%,
+    rgb(11, 132, 145) 91.1%
+  );
 }
 
 .products-container a {
@@ -15,7 +19,7 @@
 }
 
 .products-container .nav-item a {
-  color: #e3c08d;
+  color: #abb3ed;
 }
 
 .products-container .nav-item a.disabled {
@@ -29,6 +33,10 @@
   color: #efefee;
   font-size: 40px;
   font-family: monospace;
+  background: #214d5d;
+  padding: 0 20px;
+  box-shadow: 0 4px 8px 0 rgba(234, 228, 228, 0.615),
+    0 6px 20px 0 rgba(239, 234, 234, 0.445);
 }
 
 .products-container .store-products-frame {
@@ -55,21 +63,36 @@
 .products-container .board .products-table {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: auto;
   margin-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.products-container .board .product-container {
-  position: relative;
-  margin-top: 20px;
-  width: 100%;
-  height: auto;
-  display: none;
-  flex-direction: column;
+.products-container .board .products-table .filter {
+  position: absolute;
+  right: 100px;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  width: 80px;
+}
+
+.products-container .board .products-table .filter #statusFilter {
+  border-radius: 5px;
+  font-size: large;
+}
+
+.products-container .board .products-table .search {
+  position: absolute;
+  left: 100px;
+}
+
+.products-container .board .products-table .search input {
+  width: 200px;
+  border-radius: 10px;
+  padding-left: 10px;
 }
 
 .products-container .new-product-txt {
@@ -79,6 +102,16 @@
   font-size: 30px;
   line-height: 25px;
   color: #ffffff;
+}
+
+.products-container .board .product-container {
+  position: relative;
+  margin-top: 50px;
+  width: 100%;
+  height: auto;
+  display: none;
+  flex-direction: column;
+  align-items: center;
 }
 
 .products-container .long-input {
@@ -301,6 +334,11 @@
   font-size: 15px;
   line-height: 26px;
   color: #4f547b;
+}
+
+.products-container .products-table .table-wrapper {
+  height: 550px;
+  overflow-y: scroll;
 }
 
 .products-container table td,

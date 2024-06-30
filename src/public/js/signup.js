@@ -64,4 +64,3 @@ function validateSignupForm() {
     return false;
   }
 }
-

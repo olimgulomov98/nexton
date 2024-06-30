@@ -25,3 +25,31 @@ $(function () {
       });
   });
 });
+
+$(document).ready(function () {
+  $("#statusFilter").on("change", function () {
+    var selectedStatus = $(this).val();
+    $(".table tbody tr").each(function () {
+      var status = $(this).find(".member-status").val();
+      if (selectedStatus === "all" || status === selectedStatus) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  });
+
+  $("#statusFilter").trigger("change");
+
+  $("#searchInput").on("keyup", function () {
+    var searchText = $(this).val().toLowerCase();
+    $(".table tbody tr").each(function () {
+      var productName = $(this).find("td:nth-child(2)").text().toLowerCase();
+      if (productName.includes(searchText)) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  });
+});

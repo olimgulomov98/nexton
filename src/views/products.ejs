@@ -27,47 +27,61 @@
     <div class="store-products-frame">
       <div class="board">
         <div class="products-table">
+          <div class="search">
+            <input type="text" id="searchInput" placeholder="Search by Name">
+          </div>
           <span class="new-product-txt" style="margin-bottom: 30px">
             STORE PRODUCTS
           </span>
-          <table class="table table-bordered table-hover">
-            <thead class="thead-light">
-              <tr class="thead-light">
-                <th scope="col">T/r</th>
-                <th scope="col">Product Name</th>
-                <th scope="col">Product Type</th>
-                <th scope="col">Product Size</th>
-                <th scope="col">Product Original Price</th>
-                <th scope="col">Product Discount Price</th>
-                <th scope="col">Product Left Count</th>
-                <th scope="col">Status</th>
-              </tr>
-            </thead>
-            <% products.map(function(value, key) { %>
-              <tbody style="background: white">
-                <td><%= key + 1 %></td>
-                <td><%= value.productName %></td>
-                <td><%= value.productCollection %></td>
-                <td>
-                  <%= value.productCollection === "SHOES" ? value.productShoeSize :
-                  value.productSize && value.productCollection === "KIDS" ? value.productKidsSize : value.productSize %>
-                </td>
-                <td><%= value.productOrgPrice %></td>
-                <td><%= value.productDisPrice %></td>
-                <td><%= value.productLeftCount %></td>
-                <td>
-                  <select
-                    class="spec-select new-product-status"
-                    id="<%= value._id %>"
-                  >
-                    <option value="PAUSE" <%= value.productStatus === "PAUSE" ? "selected" : "" %> >PAUSE</option>
-                    <option value="PROCESS" <%= value.productStatus === "PROCESS" ? "selected" : "" %> >PROCESS</option>
-                    <option value="DELETE" <%= value.productStatus === "DELETE" ? "selected" : "" %> >DELETE</option>
-                  </select>
-                </td>
-              </tbody>
-              <% }) %>
-          </table>
+          <div class="filter">
+            <select id="statusFilter">
+              <option value="all">All</option>
+              <option value="PAUSE">Pause</option>
+              <option value="PROCESS">Process</option>
+              <option value="DELETE">Delete</option>
+            </select>
+          </div>
+          <div class="table-wrapper">
+            <table class="table table-bordered table-hover">
+              <thead class="thead-light">
+                <tr class="thead-light">
+                  <th scope="col">T/r</th>
+                  <th scope="col">Product Name</th>
+                  <th scope="col">Product Type</th>
+                  <th scope="col">Product Size</th>
+                  <th scope="col">Product Original Price</th>
+                  <th scope="col">Product Discount Price</th>
+                  <th scope="col">Product Left Count</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <% products.map(function(value, key) { %>
+                <tbody style="background: white">
+                  <td><%= key + 1 %></td>
+                  <td><%= value.productName %></td>
+                  <td><%= value.productCollection %></td>
+                  <td>
+                    <%= value.productCollection === "SHOES" ? value.productShoeSize :
+                    value.productSize && value.productCollection === "KIDS" ? value.productKidsSize : value.productSize %>
+                  </td>
+                  <td><%= value.productOrgPrice %></td>
+                  <td><%= value.productDisPrice %></td>
+                  <td><%= value.productLeftCount %></td>
+                  <td>
+                    <select
+                      class="spec-select new-product-status"
+                      id="<%= value._id %>"
+                    >
+                      <option value="PAUSE" <%= value.productStatus === "PAUSE" ? "selected" : "" %> >PAUSE</option>
+                      <option value="PROCESS" <%= value.productStatus === "PROCESS" ? "selected" : "" %> >PROCESS</option>
+                      <option value="DELETE" <%= value.productStatus === "DELETE" ? "selected" : "" %> >DELETE</option>
+                    </select>
+                  </td>
+                </tbody>
+                <% }) %>
+            </table>
+          </div>
+          
           <div
             class="long-input"
             style="align-items: flex-end; margin-bottom: 25px"

@@ -47,9 +47,18 @@
     <div class="users-frame">
       <div class="board">
         <div class="user-table">
-          <span class="header-name" style="margin-bottom: 30px"
-            >All Users List</span
-          >
+          <div class="search">
+            <input type="text" id="searchInput" placeholder="Search by Name">
+          </div>
+          <span class="header-name" style="margin-bottom: 30px">All Users List</span>
+            <div class="filter">
+              <select id="statusFilter">
+                <option value="all">All</option>
+                <option value="ACTIVE">Active</option>
+                <option value="BLOCK">Block</option>
+                <option value="DELETE">Delete</option>
+              </select>
+            </div>
           <table class="table table-hover table-sm">
             <thead class="thead-light">
               <tr class="thead-light">

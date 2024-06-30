@@ -7,7 +7,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(-45deg, #110303bf, #e37813, #011c1aba, #968383);
+  background: linear-gradient(
+    109.6deg,
+    rgb(0, 0, 0) 11.2%,
+    rgb(11, 132, 145) 91.1%
+  );
 }
 
 .users-container a {
@@ -16,7 +20,7 @@
 }
 
 .users-container .nav-item a {
-  color: #e3c08d;
+  color: #abb3ed;
 }
 
 .users-container .nav-item a.disabled {
@@ -30,6 +34,11 @@
   color: #efefee;
   font-size: 40px;
   font-family: monospace;
+  background: #214d5d;
+  padding: 0 20px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px 0 rgba(234, 228, 228, 0.615),
+    0 6px 20px 0 rgba(239, 234, 234, 0.445);
 }
 
 .users-container .users-frame {
@@ -37,6 +46,7 @@
   padding-bottom: 80px;
   width: 100%;
   height: auto;
+  margin-top: 50px;
 
   display: flex;
   flex-direction: column;
@@ -53,16 +63,6 @@
   align-items: center;
 }
 
-.users-container .board .dishes-table {
-  position: relative;
-  width: 100%;
-  height: auto;
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .users-container .board .user-table {
   position: relative;
   width: 85%;
@@ -71,6 +71,30 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.users-container .board .user-table .filter {
+  position: absolute;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.users-container .board .user-table .filter #statusFilter {
+  border-radius: 5px;
+  font-size: large;
+}
+
+.users-container .board .user-table .search {
+  position: absolute;
+  left: 10px;
+}
+
+.users-container .board .user-table .search input {
+  width: 200px;
+  border-radius: 10px;
+  padding-left: 10px;
 }
 
 .users-container .header-name {
