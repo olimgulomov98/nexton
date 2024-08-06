@@ -1,7 +1,7 @@
 .products-container {
   position: relative;
   width: auto;
-  height: 100%;
+  height: auto;
   min-height: 100%;
   display: flex;
   flex-direction: column;
@@ -35,6 +35,7 @@
   font-family: monospace;
   background: #214d5d;
   padding: 0 20px;
+  margin-top: 20px;
   box-shadow: 0 4px 8px 0 rgba(234, 228, 228, 0.615),
     0 6px 20px 0 rgba(239, 234, 234, 0.445);
 }
@@ -44,7 +45,6 @@
   padding-bottom: 80px;
   width: 100%;
   height: auto;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,7 +52,7 @@
 
 .products-container .store-products-frame .board {
   position: relative;
-  margin-top: 100px;
+  margin-top: 150px;
   width: 1320px;
   height: auto;
   display: flex;
@@ -337,7 +337,7 @@
 }
 
 .products-container .products-table .table-wrapper {
-  height: 550px;
+  height: 650px;
   overflow-y: scroll;
 }
 
