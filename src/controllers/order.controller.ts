@@ -1,7 +1,7 @@
 import { ExtendedRequest } from "../libs/types/member";
 import { T } from "../libs/types/common";
 import { Response } from "express";
-import Errors, { HttpCode, Message } from "../libs/Error";
+import Errors, { HttpCode } from "../libs/Error";
 import OrderService from "../models/Order.service";
 import { OrderInquiry, OrderUpdateInput } from "../libs/types/order";
 import { OrderStatus } from "../libs/enums/order.enum";
