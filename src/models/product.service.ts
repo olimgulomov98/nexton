@@ -8,7 +8,7 @@ import {
   ProductInquiry,
   ProductUpdateInput,
 } from "../libs/types/product";
-import ProductModel from "../schema/Product.model";
+import ProductModel from "../schema/product.model";
 import { ProductStatus } from "../libs/enums/product.enum";
 import { ViewInput } from "../libs/types/view";
 import { ViewGroup } from "../libs/enums/view.enum";

@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { T } from "../libs/types/common";
-import MemberService from "../models/Member.service";
+import MemberService from "../models/member.service";
 import AuthService from "../models/AuthService";
 import Errors, { HttpCode, Message } from "../libs/Error";
 import {
