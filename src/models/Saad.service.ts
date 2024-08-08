@@ -1,4 +1,4 @@
-import MemberModel from "../schema/Member.model";
+import MemberModel from "../schema/Saad.model";
 import {
   LoginInput,
   Member,

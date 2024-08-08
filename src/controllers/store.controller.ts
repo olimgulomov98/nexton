@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import { T } from "../libs/types/common";
 import { AdminRequest, LoginInput, MemberInput } from "../libs/types/member";
 import { MemberType } from "../libs/enums/member.enum";
-import MemberService from "../models/Member.service";
+import MemberService from "../models/Saad.service";
 import Errors, { HttpCode, Message } from "../libs/Error";
 
 const storeController: T = {};
