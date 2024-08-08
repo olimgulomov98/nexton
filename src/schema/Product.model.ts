@@ -7,7 +7,7 @@ import {
   ProductStatus,
 } from "../libs/enums/product.enum";
 
-const productSchema = new Schema(
+const ProductSchema = new Schema(
   {
     productStatus: {
       type: String,
@@ -76,8 +76,8 @@ const productSchema = new Schema(
   { timestamps: true } // updatedAt, createdAt
 );
 
-productSchema.index(
+ProductSchema.index(
   { productName: 1, productSize: 1, productShoeSize: 1, productKidsSize: 1 },
   { unique: true }
 );
-export default mongoose.model("Product", productSchema);
+export default mongoose.model("Product", ProductSchema);
